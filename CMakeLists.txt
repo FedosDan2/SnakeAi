@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.28 FATAL_ERROR)
+set(PROJECT_NAME Snake)
+project(${PROJECT_NAME})
 
-project(Snake)
+add_executable(${PROJECT_NAME} src/snake.cpp)
 
-add_executable(Snake src/snake.cpp)
+add_subdirectory(external/glfw)
+target_link_libraries(${PROJECT_NAME} glfw)
